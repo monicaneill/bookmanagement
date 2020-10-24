@@ -8,9 +8,9 @@
 include_once 'connect.php';
 if(isset($_POST['Submit']))
 {
-	 $book_title = $_POST['title'];
-	 $author_name = $_POST['author'];
-	 $genre = $_POST['genre'];
+	 $book_title = mysqli_real_escape_string($db, $_POST['title']);
+	 $author_name = mysqli_real_escape_string($db, $_POST['author']);
+	 $genre = mysqli_real_escape_string($db, $_POST['genre']);
 	 $sql = "INSERT INTO books (title,author,genre)
 	 VALUES ('$book_title','$author_name','$genre')";
 
@@ -26,3 +26,4 @@ if(isset($_POST['Submit']))
 
 </body>
 </html>
+
