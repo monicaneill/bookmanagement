@@ -42,7 +42,16 @@
 <td><?php echo $row["genre"];?> </td>
 <td><?php echo $row["Date Added"];?> </td>
 <td><a href="edit.php?id=<?php echo $row['ID']?>">Edit</a></td>
-<td><a href="delete.php?id=<?php echo $row['ID']?>">Delete</a></td>
+<td><input type="button" onClick="Delete(<?php echo $row['ID']; ?>)" name = "Delete" value = "Delete"></td>
+<script language="javascript">
+function Delete(delid)
+{
+  if(confirm("Are you sure you want to delete this row?")){
+    window.location.href='delete.php?del_id=' +delid+'';
+    return true;
+  }
+}
+</script>
 </tr>
 <?php
 }
