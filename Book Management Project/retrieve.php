@@ -4,9 +4,12 @@
 
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="mystyle.css">
+</head>
 <body bgcolor="#FFCCCC">
 <center><h1>Displaying Books<h1></center>
-<table border="10" align="center">
+<table border="10" align="center"> <!-- Outer border table -->
 <tr>
 <td>
 <center><h2>Book Management</h2></center>
@@ -42,7 +45,7 @@
 <td><?php echo $row["genre"];?> </td>
 <td><?php echo $row["Date Added"];?> </td>
 <td><a href="edit.php?id=<?php echo $row['ID']?>">Edit</a></td>
-<td><input type="button" onClick="Delete(<?php echo $row['ID']; ?>)" name = "Delete" value = "Delete"></td>
+<td><input type="button" onClick="Delete(<?php echo $row['ID']; ?>)" name = "Delete" value = "Delete" class = "button"></td>
 <script language="javascript">
 function Delete(delid)
 {
